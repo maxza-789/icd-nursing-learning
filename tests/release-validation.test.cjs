@@ -1,0 +1,20 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {loadSnapshot,ASSETS}=require('./suite-runner.cjs');
+const {validateSnapshot}=require('./release-snapshot.cjs');
+const {normalizeText}=require('./text-hash.cjs');
+let count=0;function test(name,fn){try{fn();count++;}catch(error){error.message=name+': '+error.message;throw error;}}
+const original=loadSnapshot();const fails=files=>validateSnapshot(files).filter(c=>!c.passed);
+test('working release snapshot validates without rewriting source',()=>assert.equal(fails(original).length,0));
+for(const newline of ['\n','\r\n','\r'])test('snapshot validates newline '+JSON.stringify(newline),()=>{const variant=Object.fromEntries(Object.entries(original).map(([name,text])=>[name,normalizeText(text).replace(/\n/g,newline)]));assert.equal(fails(variant).length,0);});
+for(const name of ASSETS)test('missing '+name+' is rejected',()=>{const changed={...original};delete changed[name];assert(fails(changed).length>0);});
+test('Clinical Review Register reference rejected',()=>{const changed={...original,'index.html':original['index.html'].replace('</body>','<script src="clinical-review.js"></script></body>')};assert(fails(changed).some(c=>c.name.includes('Clinical Review')));});
+for(const token of ['NEOICDReview','neoIcdClinicalReviewV1'])test('forbidden namespace '+token,()=>assert(fails({...original,'simulation-engine.js':original['simulation-engine.js']+'\n// '+token}).some(c=>c.name.includes('Clinical Review'))));
+test('external dependency rejected',()=>assert(fails({...original,'index.html':original['index.html'].replace('src="knowledge-center.js"','src="https://example.invalid/library.js"')}).some(c=>c.name.includes('relative'))));
+test('broken local asset rejected',()=>assert(fails({...original,'index.html':original['index.html'].replace('src="knowledge-center.js"','src="missing.js"')}).some(c=>c.name.includes('relative'))));
+test('root absolute path rejected for project hosting',()=>assert(fails({...original,'index.html':original['index.html'].replace('href="simulation.css"','href="/simulation.css"')}).some(c=>c.name.includes('relative'))));
+test('removed governance notice rejected',()=>assert(fails({...original,'index.html':original['index.html'].replace('id="governance"','id="removed"')}).some(c=>c.name.includes('Governance'))));
+test('changed quiz answer rejected even when counts stay identical',()=>{const modules=JSON.parse(original['index.html'].match(/const modules=(.*);/)[1]);modules[0].quiz[0].a=(modules[0].quiz[0].a+1)%modules[0].quiz[0].opts.length;const html=original['index.html'].replace(/const modules=(.*);/,()=> 'const modules='+JSON.stringify(modules)+';');assert(fails({...original,'index.html':html}).some(c=>c.name.includes('semantic')));});
+test('changed Phase 1 logic rejected',()=>assert(fails({...original,'index.html':original['index.html'].replace('function continueLearning(){','function continueLearning(){/* mutation */')}).some(c=>c.name.includes('Phase 1'))));
+for(const name of ASSETS.filter(n=>n!=='index.html'))test('changed asset '+name+' rejected',()=>assert(fails({...original,[name]:original[name]+'\n/* actual change */'}).some(c=>c.name.includes('content preserved'))));
+console.log('PASS: '+count+' named release-validation tests; 0 failed.');
