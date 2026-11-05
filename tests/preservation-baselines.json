@@ -1,0 +1,48 @@
+{
+  "sourceCommit": "49f6b0d5f6b6a4a9dfad2718351edb8ae9ca6c6d",
+  "releaseCandidateCommit": "374ee6d6447169a60bab446eafc0d34c7910d092",
+  "files": {
+    "README.txt": {
+      "rawCommittedSha256": "98705c959fcd73cc830b3c7f827ec929909bd2985e90d81dbf202d1e858dbf47",
+      "normalizedSha256": "98705c959fcd73cc830b3c7f827ec929909bd2985e90d81dbf202d1e858dbf47",
+      "legacyExpectedSha256": "e2b13ac48c3067dcda05d48990fed62fa2aee61047924d07715c4b26cc9615ab",
+      "reason": "Legacy expected hash used CRLF working-tree bytes; canonical replacement is the LF-normalized text read from the trusted committed blob. Content is otherwise identical."
+    },
+    "knowledge-center.js": {
+      "rawCommittedSha256": "cd59fe0daae25ef8bb5b27dbf825e4119ce880db09c93c80b7c97f8575f0b3d5",
+      "normalizedSha256": "cd59fe0daae25ef8bb5b27dbf825e4119ce880db09c93c80b7c97f8575f0b3d5"
+    },
+    "knowledge-center.css": {
+      "rawCommittedSha256": "707d1614f5332eb101bd742d7ae2f1c18df01638956c64c5c86426bde4f74445",
+      "normalizedSha256": "707d1614f5332eb101bd742d7ae2f1c18df01638956c64c5c86426bde4f74445"
+    },
+    "simulation-content.js": {
+      "rawCommittedSha256": "e171f257d6bee277e1f3c52b0a909ff5cc1f54fdd875903bfa09f7955c4620e3",
+      "normalizedSha256": "e171f257d6bee277e1f3c52b0a909ff5cc1f54fdd875903bfa09f7955c4620e3"
+    },
+    "simulation-engine.js": {
+      "rawCommittedSha256": "b0c84ce4398c2468c1ae38c81942d23c34c67920d02d4548feee7f0570e08ebb",
+      "normalizedSha256": "b0c84ce4398c2468c1ae38c81942d23c34c67920d02d4548feee7f0570e08ebb"
+    },
+    "simulation-storage.js": {
+      "rawCommittedSha256": "ad69128d5d5370fbef923edd7abfa2972975507837d7fa6e07f41d054926fdec",
+      "normalizedSha256": "ad69128d5d5370fbef923edd7abfa2972975507837d7fa6e07f41d054926fdec"
+    },
+    "simulation.css": {
+      "rawCommittedSha256": "76373ea0f15925ac3ca0f64f45289ccd8e1eb286abb8ca84318796b1e80ff1d8",
+      "normalizedSha256": "76373ea0f15925ac3ca0f64f45289ccd8e1eb286abb8ca84318796b1e80ff1d8"
+    }
+  },
+  "phase1Inline": {
+    "legacyExpectedSha256": "3177481e8667bb69b3c7e81b42ebad0975cdac0499eb909fb2862e4cc707ee3f",
+    "normalizedSha256": "54e0edce1e50c581ccb8fb198a8090e6abe15d04c07cb969685936405b347dcd"
+  },
+  "normalization": "text.replace(/\\r\\n?/g, '\\n')",
+  "reason": "Canonical expected hashes come from committed development source before QA edits. LF, CRLF and lone CR map to LF; no trimming, Unicode or clinical content normalization.",
+  "testHarnessChange": {
+    "path": "tests/knowledge-center.test.cjs",
+    "legacyExpectedSha256": "a4170242bacd073cc5c9a4775bf217a8469efe7b96b095e21455d46ce8383bf9",
+    "normalizedUpdatedSha256": "bd77b3601ea4dfbd01b48ccec62fb155e9b395716d1ee0876a6a94cacc6b9c0f",
+    "reason": "The test harness now imports the shared normalization helper; update its source-preservation pin only. Original modules/scenarios/case content expected hashes are unchanged."
+  }
+}
