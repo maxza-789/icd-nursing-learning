@@ -1,11 +1,15 @@
-ICD Nursing Learning Center
-วิธีเปิดใช้งาน:
-1) แตกไฟล์ ZIP ทั้งชุด
-2) เปิด index.html ด้วย Chrome, Edge หรือ Safari
-3) เลือกบทเรียนจากเมนูด้านซ้าย อ่านเนื้อหาและทำแบบทดสอบ
-4) ระบบบันทึกความคืบหน้าไว้ใน local storage ของเบราว์เซอร์เครื่องนั้น
+NEO-ICD Academy — Advanced Neonatal & Infant Chest Drainage Nursing
 
-หมายเหตุ:
-- เป็นสื่อเรียนรู้ต้นแบบแบบ self-paced ไม่ใช่ระบบ LMS และยังไม่มีบัญชีผู้ใช้/ฐานข้อมูลส่วนกลาง
-- เนื้อหามุ่งเน้นผู้ป่วยผู้ใหญ่ ต้องปรับตามอุปกรณ์ คำสั่งแพทย์ และแนวทางที่โรงพยาบาลอนุมัติ
-- ก่อนเผยแพร่ภายในองค์กร ควรให้แพทย์ พยาบาลผู้เชี่ยวชาญ และคณะกรรมการที่เกี่ยวข้องตรวจทาน
+เว็บไซต์สื่อการเรียนรู้แบบ static HTML สำหรับพยาบาล NICU
+กลุ่มเป้าหมาย: Neonate 0–28 วัน และ Infant 29 วัน–12 เดือน
+
+การใช้งาน GitHub Pages:
+1. แตกไฟล์ ZIP
+2. อัปโหลด index.html และ README.txt ไปยัง root ของ repository
+3. Settings > Pages > Deploy from a branch > main > /(root) > Save
+
+ความสามารถ: 12 modules, learning objectives, module quizzes, clinical scenarios, local browser progress, reference links, responsive layout.
+
+ข้อจำกัด: ไม่มีระบบบัญชีผู้ใช้ ฐานข้อมูลกลาง LMS หรือการออกใบประกาศนียบัตร Progress เก็บใน localStorage ของ browser เครื่องนั้นเท่านั้น
+
+Clinical governance: เนื้อหาเป็น educational prototype ต้องผ่านการทบทวนและอนุมัติโดย Neonatologist, Neonatal Nurse Specialist/Nurse Educator และคณะกรรมการของโรงพยาบาลก่อนใช้จริง ไม่ใช้แทนคำสั่งแพทย์ คู่มือผู้ผลิต หรือ protocol ของหน่วยงาน โดยเฉพาะขนาดสาย suction, clamp, troubleshooting, accidental dislodgement และ removal.
