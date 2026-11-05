@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b46">
+<title>ICD Nursing Learning Center | ห้องเรียนออนไลน์สำหรับพยาบาลวิชาชีพ</title>
+<style>
+:root{--navy:#102b46;--navy2:#183e5b;--teal:#18a39b;--mint:#e9f7f5;--ink:#24384b;--muted:#667b8d;--line:#dce6ec;--bg:#f4f8fa;--white:#fff;--amber:#fff4df;--red:#a33b3b;--green:#187a65;--shadow:0 12px 35px rgba(16,43,70,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans Thai",Tahoma,sans-serif;line-height:1.65}a{color:inherit}button{font:inherit;cursor:pointer}.shell{max-width:1200px;margin:auto;padding:0 22px}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}.top{height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;color:var(--navy);font-weight:900}.logo{width:39px;height:39px;border-radius:13px;background:linear-gradient(145deg,var(--teal),#176b87);color:white;display:grid;place-items:center;font-size:13px}.top small{display:block;color:var(--muted);font-weight:500;font-size:10px}.top-actions{display:flex;align-items:center;gap:10px}.pill{border:1px solid var(--line);background:white;padding:8px 12px;border-radius:999px;color:var(--navy);font-size:12px;font-weight:800}
+.hero{background:radial-gradient(circle at 88% 18%,rgba(24,163,155,.22),transparent 24%),linear-gradient(120deg,#102b46,#164d69);color:#fff;padding:50px 0 42px}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:center}.eyebrow{font-size:11px;letter-spacing:.12em;color:#a9e6df;font-weight:900}.hero h1{font-size:clamp(29px,4.2vw,47px);line-height:1.22;margin:12px 0}.hero p{color:#d9e8ef;max-width:700px;margin:0 0 20px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:11px;padding:11px 16px;font-weight:800;font-size:13px}.btn.primary{background:var(--teal);color:white}.btn.light{background:white;color:var(--navy)}.hero-panel{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:22px}.hero-panel strong{font-size:18px}.hero-panel p{font-size:13px;margin:7px 0 0}.statline{display:flex;justify-content:space-between;margin-top:18px;font-size:12px;color:#d8e9ef}.progress{height:8px;background:rgba(255,255,255,.18);border-radius:20px;overflow:hidden;margin-top:7px}.progress span{display:block;height:100%;width:0;background:#63d4c7;transition:.3s}
+.layout{display:grid;grid-template-columns:270px 1fr;gap:25px;padding-top:28px;padding-bottom:60px;align-items:start}.sidebar{position:sticky;top:92px}.sidebox,.panel{background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:0 4px 18px rgba(16,43,70,.035)}.sidebox{padding:17px}.sidebox h3{font-size:13px;margin:0 0 12px;color:var(--navy)}.module-nav{display:grid;gap:6px}.module-nav button{display:flex;gap:10px;align-items:center;text-align:left;border:0;background:transparent;padding:10px;border-radius:10px;color:#536b7e;font-size:12px;font-weight:700}.module-nav button:hover,.module-nav button.active{background:var(--mint);color:#126d72}.num{width:25px;height:25px;flex:0 0 25px;border-radius:8px;background:#edf2f5;display:grid;place-items:center;font-size:11px}.module-nav button.active .num{background:var(--teal);color:white}.sidefoot{font-size:11px;color:var(--muted);margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+main{min-width:0}.welcome{padding:24px;margin-bottom:18px}.welcome h2{margin:0;color:var(--navy);font-size:22px}.welcome p{margin:5px 0 0;color:var(--muted);font-size:13px}.welcome-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.badge{font-size:11px;padding:5px 9px;border-radius:99px;background:#eaf7f5;color:#14766f;font-weight:800}.lesson{padding:25px;margin-bottom:18px}.lesson-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.lesson h2{font-size:25px;line-height:1.3;color:var(--navy);margin:4px 0 7px}.lesson-intro{color:var(--muted);margin:0 0 18px;font-size:14px}.subhead{font-size:16px;color:var(--navy);margin:22px 0 9px}.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.info{border:1px solid var(--line);border-radius:13px;padding:15px;background:#fcfefe}.info h4{font-size:14px;color:var(--navy);margin:0 0 6px}.info p,.info li{font-size:13px;color:#52697b}.info p{margin:0}.info ul{padding-left:18px;margin:5px 0 0}.callout{padding:15px 17px;border-radius:12px;background:#edf7fa;border-left:4px solid #398ba7;margin:17px 0;font-size:13px;color:#31576a}.warning{background:var(--amber);border-left-color:#d49a32;color:#654d20}.danger{background:#fff0ef;border-left-color:#c45b55;color:#783b37}.lesson-list{padding-left:20px}.lesson-list li{margin:7px 0;font-size:14px}.diagram{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:15px 0}.diagram span{padding:9px 12px;background:#edf5f8;border:1px solid #d5e5eb;border-radius:10px;font-size:12px;font-weight:800;color:#27536c}.diagram b{color:var(--teal)}
+.actions-row{display:flex;justify-content:space-between;gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line);flex-wrap:wrap}.quiz{padding:22px;margin-bottom:18px}.quiz h3{color:var(--navy);margin:0 0 5px}.question{border:1px solid var(--line);border-radius:13px;padding:15px;margin:13px 0}.question p{font-weight:800;font-size:14px;margin:0 0 10px}.option{display:flex;gap:9px;align-items:flex-start;padding:8px;border-radius:9px;font-size:13px}.option:hover{background:#f3f8fa}.option input{margin-top:5px;accent-color:var(--teal)}.feedback{display:none;padding:10px 12px;margin-top:9px;border-radius:9px;font-size:12px}.feedback.show{display:block}.feedback.good{background:#eaf7f1;color:#17644f}.feedback.bad{background:#fff2e8;color:#8a4c24}.quiz-result{display:none;margin-top:14px;padding:14px;border-radius:12px;background:var(--mint);color:#155f5b;font-weight:800}
+.scenario{padding:22px;margin-bottom:18px}.scenario h3{margin:0;color:var(--navy)}.scenario p{font-size:13px;color:var(--muted)}.scenario-choices{display:grid;gap:9px}.scenario-choices button{border:1px solid var(--line);border-radius:11px;padding:12px 14px;text-align:left;background:white;font-size:13px;color:var(--ink)}.scenario-choices button:hover{border-color:var(--teal);background:#f1faf8}.scenario-result{margin-top:12px;padding:13px;border-radius:10px;display:none;font-size:13px}
+.resources{padding:22px}.resource-row{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.resource-row:last-child{border:0}.resource-row strong{font-size:13px;color:var(--navy)}.resource-row small{display:block;color:var(--muted);font-size:11px}.resource-row a{font-size:12px;color:#147c83;font-weight:900;text-decoration:none}
+footer{background:#0b2035;color:#c4d4df;padding:25px 0;font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.sidebar{position:static}.module-nav{grid-template-columns:1fr 1fr}.sidefoot{display:none}}
+@media(max-width:560px){.shell{padding:0 14px}.top{height:62px}.top .brand{font-size:13px}.top-actions .pill{display:none}.hero{padding:38px 0}.layout{padding-top:16px}.module-nav{grid-template-columns:1fr 1fr}.content-grid{grid-template-columns:1fr}.lesson{padding:18px}.lesson h2{font-size:21px}.welcome{padding:18px}.resource-row{align-items:flex-start}.resource-row a{white-space:nowrap}}
+</style>
+</head>
+<body>
+<header><div class="shell top">
+ <a class="brand" href="#"><span class="logo">ICD</span><span>ICD Nursing Learning Center<small>ห้องเรียนออนไลน์สำหรับพยาบาลวิชาชีพ</small></span></a>
+ <div class="top-actions"><span class="pill">ADULT NURSING • SELF-PACED</span><button class="pill" onclick="resetProgress()">เริ่มเรียนใหม่ ↻</button></div>
+</div></header>
+<section class="hero"><div class="shell hero-grid">
+ <div><div class="eyebrow">CLINICAL LEARNING • CHEST DRAINAGE CARE</div><h1>เรียนรู้การพยาบาลผู้ป่วยใส่สายระบายทรวงอก (ICD)</h1>
+ <p>หลักสูตรทบทวนความรู้สำหรับพยาบาลวิชาชีพ เรียนเป็นบท อ่านสรุป ทำแบบทดสอบ และฝึกคิดจากสถานการณ์จำลองได้ด้วยตนเอง</p>
+ <div class="hero-actions"><button class="btn primary" onclick="openModule(0)">เริ่มเรียนบทที่ 1</button><button class="btn light" onclick="document.getElementById('course').scrollIntoView({behavior:'smooth'})">ดูบทเรียนทั้งหมด</button></div></div>
+ <div class="hero-panel"><strong>เส้นทางการเรียนรู้ของคุณ</strong><p>เรียนรู้ทีละบทและทำแบบทดสอบท้ายบท ระบบจะบันทึกความคืบหน้าไว้ในเบราว์เซอร์เครื่องนี้</p><div class="statline"><span>ความคืบหน้า</span><b id="progressText">0 / 7 บท</b></div><div class="progress"><span id="progressBar"></span></div><div class="statline"><span>บทที่เรียนจบแล้ว</span><b id="doneText">0%</b></div></div>
+</div></section>
+
+<div class="shell layout" id="course">
+ <aside class="sidebar"><div class="sidebox"><h3>หลักสูตร ICD Nursing</h3><div class="module-nav" id="moduleNav"></div><div class="sidefoot">แนะนำให้เรียนตามลำดับบท ใช้เวลาประมาณ 10–15 นาทีต่อบท (โดยประมาณ)</div></div></aside>
+ <main>
+  <section class="panel welcome"><div class="welcome-row"><div><h2>ยินดีต้อนรับสู่ห้องเรียน ICD</h2><p>เลือกบทเรียนจากเมนูด้านซ้าย หรือกด “เริ่มเรียน” เพื่อเรียนตามลำดับ</p></div><span class="badge">7 MODULES • QUIZ • CASE STUDY</span></div></section>
+  <div id="lessonArea"></div>
+  <section class="panel scenario" id="scenarioBox"><h3>ฝึกคิดจากสถานการณ์จำลอง</h3><p>เลือกการตอบสนองที่เหมาะสมที่สุดจากสถานการณ์ตัวอย่าง เพื่อฝึกจัดลำดับความสำคัญในการประเมิน</p><div id="scenarioContent"></div></section>
+  <section class="panel resources"><h3 style="margin:0;color:var(--navy)">เอกสารประกอบการเรียน</h3><p style="font-size:12px;color:var(--muted);margin:4px 0 8px">ดาวน์โหลดคู่มือฉบับเต็มและเครื่องมือทบทวนจากชุดเอกสารประกอบ</p>
+   <div class="resource-row"><div><strong>คู่มือการพยาบาลผู้ป่วยใส่สายระบายทรวงอก (ICD)</strong><small>คู่มือเนื้อหา 13 บท</small></div><a href="downloads/คู่มือการพยาบาลผู้ป่วยใส่สายระบายทรวงอก_ICD.docx" download>ดาวน์โหลด DOCX ↓</a></div>
+   <div class="resource-row"><div><strong>Infographic Handbook</strong><small>สรุปภาพรวม 14 หน้า</small></div><a href="downloads/ICD_Nursing_Infographic_Handbook_14pages.pdf" download>ดาวน์โหลด PDF ↓</a></div>
+   <div class="resource-row"><div><strong>SOP • Emergency Algorithm • Assessment Form</strong><small>ต้นแบบแนวทางปฏิบัติและแบบบันทึก</small></div><a href="downloads/ICD_Nursing_SOP_Emergency_Algorithm_Assessment_Form.docx" download>ดาวน์โหลด DOCX ↓</a></div>
+  </section>
+ </main>
+</div>
+<footer><div class="shell footer-row"><div><b>ICD Nursing Learning Center</b><br>สื่อการเรียนรู้สำหรับพยาบาลวิชาชีพ • Adult Nursing</div><div>ใช้เพื่อการศึกษาและทบทวนความรู้ ไม่ใช้แทนคำสั่งแพทย์ การฝึกปฏิบัติ หรือแนวทางที่โรงพยาบาลอนุมัติ</div></div></footer>
+
+<script>
+const modules = [
+{title:"ความรู้พื้นฐานเกี่ยวกับ ICD",time:"10 นาที",intro:"ทำความเข้าใจวัตถุประสงค์ของการระบายทรวงอก ข้อบ่งชี้ และคำศัพท์ที่ใช้ในการดูแลผู้ป่วย",
+sections:[
+["ICD คืออะไร", "Intercostal Chest Drainage (ICD) หรือ Chest Tube Drainage คือการใส่สายผ่านผนังทรวงอกเข้าสู่ช่องเยื่อหุ้มปอด (pleural space) เพื่อระบายอากาศ เลือด หรือของเหลวที่สะสมอยู่ ช่วยลดการกดเบียดปอดและส่งเสริมให้ปอดขยายตัวตามกลไกที่เหมาะสม"],
+["ข้อบ่งชี้ที่พบบ่อย","Pneumothorax (มีอากาศในช่องเยื่อหุ้มปอด), Hemothorax (มีเลือด), Pleural effusion (มีของเหลว), Empyema (มีหนอง), Chylothorax และการระบายหลังผ่าตัดทรวงอกตามแผนการรักษา"],
+["คำศัพท์สำคัญ","Water seal คือระบบวาล์วทางเดียว • Tidaling คือการขึ้นลงของระดับน้ำตามการเปลี่ยนแปลงแรงดัน • Bubbling คือการเกิดฟองอากาศในห้องของระบบ • Air leak คือการรั่วของอากาศเข้าสู่ระบบ • Suction คือแรงดูดตามข้อบ่งชี้และคำสั่งรักษา"]
+],key:"การตัดสินใจใส่สายขึ้นกับอาการ ผลตรวจ และดุลยพินิจของแพทย์ ไม่ใช่ผู้ป่วยทุกรายที่มี pneumothorax หรือ pleural effusion จะต้องใส่สาย",
+quiz:[
+{q:"วัตถุประสงค์หลักของ ICD คือข้อใด",opts:["ระบายอากาศหรือของเหลวจากช่องเยื่อหุ้มปอด","เพิ่มแรงดันในช่องเยื่อหุ้มปอด","ให้ยาเข้าสู่หลอดลมโดยตรง","วัดความดันโลหิตในทรวงอก"],a:0,why:"ICD ช่วยระบายอากาศ เลือด หรือของเหลวที่สะสมในช่องเยื่อหุ้มปอด"},
+{q:"คำว่า Tidaling หมายถึงอะไร",opts:["การมีเลือดออกจากแผล","การขึ้นลงของระดับน้ำตามการเปลี่ยนแปลงแรงดัน","การตั้งค่าแรงดูด","การรั่วของอากาศจากข้อต่อ"],a:1,why:"Tidaling คือการเคลื่อนไหวขึ้นลงของระดับน้ำใน water seal ตามการเปลี่ยนแปลงแรงดัน"}
+]},
+{title:"กายวิภาคและระบบระบายทรวงอก",time:"12 นาที",intro:"เชื่อมโยงกายวิภาคของเยื่อหุ้มปอดกับหลักการทำงานและส่วนประกอบของชุดระบาย",
+sections:[
+["เยื่อหุ้มปอดและ Pleural space","Visceral pleura คลุมผิวปอด ส่วน Parietal pleura บุผนังทรวงอก ระหว่างเยื่อทั้งสองมีของเหลวปริมาณเล็กน้อยช่วยลดแรงเสียดทาน ความสัมพันธ์ของแรงดันในช่องเยื่อหุ้มปอดมีส่วนสำคัญต่อการคงสภาพปอดให้ขยายตัว"],
+["ส่วนประกอบของระบบ Three-chamber","Collection chamber ใช้เก็บและแสดงปริมาณสารระบาย • Water seal chamber ทำหน้าที่เป็นวาล์วทางเดียว • Suction control chamber ควบคุมแรงดูดในระบบ wet หรือ dry suction"],
+["ชนิดของระบบ","มีทั้ง wet suction, dry suction, digital drainage และ Heimlich valve แต่ละชนิดมีรายละเอียดการใช้งานและการเฝ้าระวังต่างกัน ต้องศึกษาคู่มืออุปกรณ์รุ่นที่หน่วยงานใช้จริง"]
+],key:"อย่านำค่า ระดับน้ำ หรือวิธีดูแลจากระบบหนึ่งไปใช้กับอีกระบบโดยไม่ตรวจสอบคู่มือผู้ผลิต",
+quiz:[
+{q:"ห้องใดทำหน้าที่เก็บและแสดงปริมาณสารระบาย",opts:["Water seal chamber","Suction control chamber","Collection chamber","Air vent chamber"],a:2,why:"Collection chamber ใช้เก็บและแสดงปริมาณสารระบาย"},
+{q:"Water seal มีหน้าที่หลักอย่างไร",opts:["เป็นวาล์วทางเดียวป้องกันอากาศไหลย้อนกลับ","ควบคุมอุณหภูมิสารระบาย","วัดปริมาณออกซิเจน","กรองเชื้อโรคในอากาศ"],a:0,why:"Water seal ทำหน้าที่เป็นวาล์วทางเดียวในระบบระบาย"}
+]},
+{title:"การพยาบาลก่อน ระหว่าง และหลังใส่ ICD",time:"15 นาที",intro:"ทบทวนบทบาทพยาบาลในการเตรียมผู้ป่วย สนับสนุนหัตถการ และประเมินหลังใส่สาย",
+sections:[
+["ก่อนใส่สาย","ประเมินระดับความรู้สึกตัว vital signs, SpO₂, ลักษณะการหายใจ, lung sounds, pain, สีผิวและการไหลเวียน ทบทวนผลตรวจตามข้อบ่งชี้ ยาและประวัติแพ้ ตรวจคำสั่งการรักษา ยืนยันตัวผู้ป่วยตามนโยบาย และอธิบายขั้นตอน"],
+["ขณะใส่สาย","ช่วยจัดท่าและเตรียมอุปกรณ์ตามบทบาทหน้าที่ รักษาเทคนิคปลอดเชื้อ เฝ้าระวังอาการปวด ภาวะพร่องออกซิเจน และการเปลี่ยนแปลงของระบบไหลเวียน ประสานทีมเมื่อพบความผิดปกติ"],
+["หลังใส่สาย","ประเมิน ABCDE และ vital signs ซ้ำ ตรวจตำแหน่งสาย จุดยึด แผลและ dressing ตรวจแนวสายและข้อต่อ จัดชุดระบายต่ำกว่าระดับทรวงอกและตั้งตรง ประเมิน water seal/tidaling/bubbling ตามชนิดอุปกรณ์และบันทึก drainage"]
+],key:"การประเมินผู้ป่วยและการตอบสนองทางคลินิกสำคัญกว่าการดูอุปกรณ์เพียงอย่างเดียว",
+quiz:[
+{q:"ข้อใดควรประเมินก่อนใส่ ICD",opts:["เฉพาะปริมาณปัสสาวะ","ระดับความรู้สึกตัว การหายใจ SpO₂ และ vital signs","เฉพาะอุณหภูมิร่างกาย","เฉพาะสีของ drainage"],a:1,why:"การประเมินก่อนทำหัตถการควรครอบคลุมระบบหายใจ การไหลเวียน ระดับความรู้สึกตัวและอาการปวด"},
+{q:"หลังใส่สาย ควรจัดวางชุดระบายอย่างไร",opts:["วางสูงกว่าทรวงอก","วางบนเตียงข้างผู้ป่วย","ตั้งตรงและต่ำกว่าระดับทรวงอก","แขวนกับราวเตียงให้สูงที่สุด"],a:2,why:"การจัดชุดระบายให้ตั้งตรงและต่ำกว่าระดับทรวงอกช่วยลดโอกาสการไหลย้อนกลับ ทั้งนี้ให้ยึดคู่มืออุปกรณ์"}
+]},
+{title:"การประเมินและติดตามระบบ ICD",time:"15 นาที",intro:"ฝึกประเมินผู้ป่วยร่วมกับการตรวจระบบ ไม่แปลผลจากสัญญาณใดสัญญาณหนึ่งเพียงอย่างเดียว",
+sections:[
+["ประเมินผู้ป่วยอย่างเป็นระบบ","ติดตามระดับความรู้สึกตัว BP, PR, RR, temperature, SpO₂, oxygen device/flow, pain score, breath sounds, chest expansion, work of breathing, สีผิวและ capillary refill"],
+["ตรวจสายและชุดระบาย","ตรวจตำแหน่งสาย การยึดตรึง แผล dressing แนวสาย การหักพับ การกดทับ dependent loop ข้อต่อ ความสมบูรณ์ของชุด และตำแหน่งชุดระบาย"],
+["Tidaling / Bubbling / Drainage","ประเมิน tidaling และ bubbling ตามชนิดอุปกรณ์และสภาพผู้ป่วย บันทึกปริมาณ สี ลักษณะ และแนวโน้มของ drainage ตามความถี่ที่กำหนด หากไม่มี drainage ให้บันทึก 0 ไม่เว้นช่องว่าง"]
+],key:"ไม่มี drainage หรือ tidaling หายไป ไม่ได้แปลว่าสายอุดตันเสมอไป อาจเกิดจากปอดขยายแล้วหรือมีปัจจัยอื่น ต้องประเมินผู้ป่วยและระบบร่วมกัน",
+quiz:[
+{q:"เมื่อไม่มี drainage และ tidaling หายไป ผู้ป่วยยังคงที่ ควรทำอย่างไรเป็นลำดับต้น",opts:["รีดสายอย่างแรง","Clamp สายทันที","ประเมินผู้ป่วยและตรวจแนวสาย/ระบบตาม protocol","ถอดสายออก"],a:2,why:"ควรประเมินผู้ป่วยก่อน ตรวจสายหักพับ ถูกกด dependent loop และอุปกรณ์ โดยไม่สรุปว่าอุดตันจากสัญญาณเดียว"},
+{q:"การบันทึก drainage รายชั่วโมง หากไม่มีสารระบายควรทำอย่างไร",opts:["เว้นช่องว่าง","บันทึก 0 mL","เขียนว่าไม่ทราบ","รวมยอดไปบันทึกวันถัดไป"],a:1,why:"ควรบันทึก 0 mL เพื่อแยกจากการไม่ได้ประเมินหรือไม่ได้บันทึก"}
+]},
+{title:"ภาวะแทรกซ้อนและการตอบสนองฉุกเฉิน",time:"15 นาที",intro:"เรียนรู้การจัดลำดับความสำคัญเมื่อผู้ป่วยทรุดหรือระบบระบายผิดปกติ",
+sections:[
+["Red flags","หอบเฉียบพลัน SpO₂ ลดลง ความดันต่ำหรือช็อก เจ็บหน้าอกมากขึ้น ซึมลง/หมดสติ เลือดออกมากผิดปกติ หรือสงสัย tension pneumothorax ต้องเรียกแพทย์/ทีมฉุกเฉินทันที"],
+["สายหลุดจากทรวงอก","เรียกแพทย์/ทีมฉุกเฉิน ประเมิน ABCDE, vital signs และ SpO₂ ปิดบริเวณแผลด้วยวัสดุปิดแผลปลอดเชื้อตาม protocol ที่โรงพยาบาลอนุมัติ เฝ้าระวัง respiratory distress และห้ามใส่สายกลับเข้ารูเดิมโดยพยาบาล"],
+["สายหลุดจากชุดระบายหรือระบบรั่ว","ประเมินผู้ป่วยทันที เรียกผู้ช่วย และคืนระบบสู่ระบบปิดโดยใช้อุปกรณ์/ขั้นตอนฉุกเฉินเฉพาะที่หน่วยงานกำหนด ไม่ปล่อยให้ระบบเปิดสู่บรรยากาศโดยไม่จัดการ"],
+["Continuous bubbling / Air leak","ประเมินผู้ป่วย ตรวจสายและข้อต่อจากผู้ป่วยถึงชุดระบาย ตรวจแผลและระบบตามคู่มือ หากต่อเนื่องหรือผู้ป่วยมีอาการให้แจ้งแพทย์ ไม่ clamp เพื่อค้นหารอยรั่วเป็นกิจวัตร"]
+],key:"หากผู้ป่วยไม่คงที่ ให้เรียกทีมฉุกเฉินและประเมิน ABCDE ก่อน ไม่รอแก้ไขอุปกรณ์เพียงอย่างเดียว",
+quiz:[
+{q:"ผู้ป่วยใส่ ICD มีหอบเฉียบพลันและ SpO₂ ลดลง การตอบสนองที่สำคัญที่สุดคือข้อใด",opts:["รอดูอาการ 30 นาที","เรียกทีมฉุกเฉิน/แพทย์และประเมิน ABCDE ทันที","บันทึกอาการก่อนแล้วค่อยแจ้ง","Clamp สายเพื่อหยุด drainage"],a:1,why:"อาการหอบเฉียบพลันและ SpO₂ ลดลงเป็น red flags ต้องตอบสนองฉุกเฉินทันที"},
+{q:"เมื่อสายหลุดจากทรวงอก ข้อใดไม่ควรทำ",opts:["เรียกแพทย์/ทีมฉุกเฉิน","ประเมิน ABCDE และ SpO₂","ใส่สายกลับเข้ารูเดิมโดยพยาบาล","ปิดแผลตาม protocol ที่อนุมัติ"],a:2,why:"พยาบาลไม่ควรใส่สายกลับเข้ารูเดิม ต้องให้ผู้มีอำนาจประเมินและดำเนินการ"}
+]},
+{title:"Nursing Care Plan และการดูแลต่อเนื่อง",time:"12 นาที",intro:"เชื่อมโยงข้อมูลประเมินกับปัญหาทางการพยาบาล เป้าหมาย กิจกรรม และผลลัพธ์",
+sections:[
+["ประเด็นปัญหาที่ควรพิจารณา","การแลกเปลี่ยนก๊าซบกพร่อง/เสี่ยงต่อภาวะพร่องออกซิเจน • ปวดเฉียบพลัน • เสี่ยงต่อการติดเชื้อ • วิตกกังวล • การเคลื่อนไหว/การทำกิจกรรมลดลง"],
+["การกำหนดเป้าหมาย","กำหนดเป้าหมายให้สอดคล้องกับสภาพผู้ป่วยและแผนการรักษา เช่น การหายใจและ SpO₂ อยู่ในเป้าหมายที่ทีมรักษากำหนด อาการปวดได้รับการจัดการ แผลสะอาด และระบบระบายทำงานตามที่คาดหมาย"],
+["การดูแลต่อเนื่องและให้ความรู้","ส่งเสริมการหายใจลึกและไออย่างมีประสิทธิภาพตามความเหมาะสม ช่วยเคลื่อนไหวอย่างปลอดภัย ดูแลความสุขสบาย ให้ข้อมูลผู้ป่วย/ญาติ และสอนอาการผิดปกติที่ต้องรีบแจ้ง"]
+],key:"Nursing Care Plan ต้องปรับตามปัญหาเฉพาะราย ไม่ใช้รายการวินิจฉัยแบบเดียวกับผู้ป่วยทุกคน",
+quiz:[
+{q:"การกำหนด Nursing Care Plan ที่เหมาะสมควรเริ่มจากอะไร",opts:["ใช้แผนเดียวกันกับผู้ป่วยทุกราย","ข้อมูลประเมินและปัญหาเฉพาะราย","เลือกกิจกรรมจากความสะดวกของผู้ดูแล","กำหนดเป้าหมายโดยไม่ประเมิน"],a:1,why:"แผนการพยาบาลควรอิงข้อมูลประเมินและความต้องการของผู้ป่วยแต่ละราย"}
+]},
+{title:"การถอดสาย การบันทึก และการส่งเวร",time:"12 นาที",intro:"ทบทวนการเตรียมถอดสาย การดูแลหลังถอด และการสื่อสารข้อมูลอย่างครบถ้วน",
+sections:[
+["การเตรียมถอดสาย","การพิจารณาถอดเป็นการตัดสินใจของแพทย์ตามอาการ ผลตรวจ และเกณฑ์ของหน่วยงาน พยาบาลตรวจคำสั่ง เตรียมอุปกรณ์ อธิบายผู้ป่วย ประเมินก่อนทำ และช่วยเหลือตามบทบาท"],
+["หลังถอดสาย","ปิดแผลด้วยเทคนิคและวัสดุตาม protocol ประเมินการหายใจ vital signs, SpO₂, pain, แผล และอาการผิดปกติ ติดตามภาพถ่ายรังสีหรือการตรวจอื่นตามแผน และบันทึกการตอบสนอง"],
+["การบันทึกและส่งเวร","บันทึกวันเวลา ด้าน/ตำแหน่ง ชนิดระบบ suction ตามคำสั่ง ปริมาณและลักษณะ drainage, tidaling/bubbling, สภาพแผล/สาย vital signs การช่วยเหลือ การรายงานแพทย์และการตอบสนอง"]
+],key:"เกณฑ์ปริมาณ drainage หรือเกณฑ์ถอดสายไม่ควรใช้เป็นตัวเลขตายตัว ต้องอิงคำสั่งแพทย์และแนวทางของหน่วยงาน",
+quiz:[
+{q:"ข้อใดเป็นข้อมูลสำคัญในการส่งเวรผู้ป่วยใส่ ICD",opts:["เฉพาะชื่อผู้ป่วย","ปริมาณ/ลักษณะ drainage ระบบ water seal/suction สภาพแผลและอาการผู้ป่วย","เฉพาะเวลารับประทานอาหาร","เฉพาะจำนวนครั้งที่ญาติเข้าเยี่ยม"],a:1,why:"การส่งเวรควรรวมข้อมูลผู้ป่วยและระบบระบายที่จำเป็นต่อความต่อเนื่องและความปลอดภัย"}
+]}
+];
+
+let current=0;
+let completed=JSON.parse(localStorage.getItem("icdCourseCompleted")||"[]");
+function save(){localStorage.setItem("icdCourseCompleted",JSON.stringify(completed));updateProgress();renderNav();}
+function updateProgress(){let n=completed.length;document.getElementById("progressText").textContent=n+" / "+modules.length+" บท";document.getElementById("doneText").textContent=Math.round(n/modules.length*100)+"%";document.getElementById("progressBar").style.width=(n/modules.length*100)+"%";}
+function renderNav(){document.getElementById("moduleNav").innerHTML=modules.map((m,i)=>`<button class="${i===current?'active':''}" onclick="openModule(${i})"><span class="num">${completed.includes(i)?'✓':i+1}</span><span>${m.title}</span></button>`).join("");}
+function openModule(i){current=i;renderNav();renderLesson();document.getElementById("course").scrollIntoView({behavior:"smooth",block:"start"});}
+function renderLesson(){
+ const m=modules[current];
+ let body=m.sections.map((s,i)=>`<div class="info"><h4>${i+1}. ${s[0]}</h4><p>${s[1]}</p></div>`).join("");
+ let quiz=m.quiz.map((q,qi)=>`<div class="question" id="q${qi}"><p>${qi+1}. ${q.q}</p>${q.opts.map((o,oi)=>`<label class="option"><input type="radio" name="q${qi}" value="${oi}"><span>${o}</span></label>`).join("")}<div class="feedback" id="f${qi}"></div></div>`).join("");
+ document.getElementById("lessonArea").innerHTML=`
+ <section class="panel lesson"><div class="lesson-head"><div><span class="badge">บทที่ ${current+1} • ${m.time}</span><h2>${m.title}</h2></div><span style="font-size:22px">${completed.includes(current)?'✓':'📘'}</span></div>
+ <p class="lesson-intro">${m.intro}</p><h3 class="subhead">สาระสำคัญ</h3><div class="content-grid">${body}</div>
+ <div class="callout"><b>Key Point:</b> ${m.key}</div>
+ <div class="actions-row"><button class="btn" style="background:#edf2f5;color:#35536a" onclick="openModule(${Math.max(0,current-1)})" ${current===0?'disabled':''}>← บทก่อนหน้า</button><button class="btn primary" onclick="document.getElementById('quizArea').scrollIntoView({behavior:'smooth'})">ทำแบบทดสอบท้ายบท ↓</button></div></section>
+ <section class="panel quiz" id="quizArea"><h3>ทบทวนความเข้าใจท้ายบท</h3><p style="font-size:12px;color:var(--muted);margin:0">เลือกคำตอบที่เหมาะสม แล้วกดตรวจคำตอบ ระบบจะแสดงคำอธิบาย</p>${quiz}
+ <button class="btn primary" onclick="checkQuiz()">ตรวจคำตอบ</button><div class="quiz-result" id="quizResult"></div></section>
+ <div class="actions-row" style="padding:0 3px 20px;border:0"><button class="btn" style="background:#edf2f5;color:#35536a" onclick="openModule(${Math.max(0,current-1)})" ${current===0?'disabled':''}>← ก่อนหน้า</button><button class="btn primary" onclick="completeModule()">${completed.includes(current)?'เรียนบทนี้แล้ว ✓':'ทำเครื่องหมายว่าเรียนจบ'}</button><button class="btn" style="background:#edf2f5;color:#35536a" onclick="openModule(${Math.min(modules.length-1,current+1)})" ${current===modules.length-1?'disabled':''}>บทถัดไป →</button></div>`;
+}
+function checkQuiz(){const m=modules[current];let score=0,answered=0;m.quiz.forEach((q,i)=>{let el=document.querySelector(`input[name="q${i}"]:checked`),fb=document.getElementById("f"+i);fb.className="feedback show";if(!el){fb.classList.add("bad");fb.textContent="ยังไม่ได้เลือกคำตอบ • "+q.why;return;}answered++;if(+el.value===q.a){score++;fb.classList.add("good");fb.textContent="ถูกต้อง • "+q.why;}else{fb.classList.add("bad");fb.textContent="ลองทบทวนอีกครั้ง • "+q.why;}});let res=document.getElementById("quizResult");res.style.display="block";res.textContent=`ผลแบบทดสอบ ${score} / ${m.quiz.length} ข้อ (ตอบแล้ว ${answered} ข้อ)`;if(score===m.quiz.length)res.textContent+=" • ผ่านแบบทดสอบบทนี้แล้ว";}
+function completeModule(){if(!completed.includes(current)){completed.push(current);save();}else{updateProgress();}renderLesson();if(current<modules.length-1){openModule(current+1);}else{document.getElementById("lessonArea").insertAdjacentHTML("afterbegin",'<div class="callout"><b>ยินดีด้วย!</b> คุณทำเครื่องหมายเรียนครบทุกบทแล้ว ทบทวนเอกสารและทำแบบทดสอบซ้ำได้ทุกเมื่อ</div>');}}
+function resetProgress(){if(confirm("ต้องการล้างความคืบหน้าการเรียนในเบราว์เซอร์นี้หรือไม่?")){completed=[];save();renderLesson();}}
+const cases=[
+{title:"สถานการณ์ที่ 1: ผู้ป่วยหอบเฉียบพลัน",desc:"ผู้ป่วยใส่ ICD เริ่มหอบมากขึ้น SpO₂ ลดลงจากค่าก่อนหน้า และมีอาการกระสับกระส่าย คุณควรจัดลำดับการตอบสนองอย่างไร",choices:["ตรวจตัวเลข drainage ก่อน แล้วรอประเมินซ้ำ","เรียกทีมฉุกเฉิน/แพทย์ทันที ประเมิน ABCDE และ SpO₂ พร้อมช่วยเหลือตามแนวทางหน่วยงาน","Clamp สาย ICD ทันทีเพื่อหยุดการเปลี่ยนแปลง"],correct:1,feedback:"อาการหอบเฉียบพลันและ SpO₂ ลดลงเป็นสัญญาณอันตราย ต้องเรียกทีมฉุกเฉินและประเมินผู้ป่วยทันที ไม่รอแก้ไขอุปกรณ์เพียงอย่างเดียว"},
+{title:"สถานการณ์ที่ 2: ไม่มี tidaling",desc:"ผู้ป่วยรู้สึกตัวดี สัญญาณชีพคงที่ ไม่หอบ แต่สังเกตว่า tidaling หายไป ควรทำอย่างไร",choices:["สรุปว่าสายอุดตันและรีดสายแรง ๆ","ประเมินผู้ป่วย ตรวจแนวสาย/ข้อต่อ/การจัดวาง และพิจารณาข้อมูลทางคลินิกร่วมกัน","ถอดชุดระบายออกเพื่อตรวจภายใน"],correct:1,feedback:"tidaling หายไปอาจมีหลายสาเหตุ เช่น ปอดขยายแล้วหรือมีปัญหาที่แนวสาย ต้องประเมินผู้ป่วยและระบบ ห้ามสรุปจากสัญญาณเดียว"},
+{title:"สถานการณ์ที่ 3: สายหลุดจากทรวงอก",desc:"ระหว่างเคลื่อนย้ายพบว่าสายระบายหลุดออกจากทรวงอก ผู้ป่วยยังรู้สึกตัว คุณควรทำอย่างไร",choices:["ใส่สายกลับเข้ารูเดิมทันที","เรียกแพทย์/ทีมฉุกเฉิน ประเมิน ABCDE และปิดแผลตาม protocol ที่อนุมัติ","ปล่อยแผลไว้ก่อนแล้วไปตามอุปกรณ์"],correct:1,feedback:"ต้องเรียกทีม ประเมิน ABCDE/SpO₂ ปิดแผลตาม protocol ของหน่วยงาน และห้ามพยาบาลใส่สายกลับเข้ารูเดิม"}
+];
+let caseIndex=0;
+function renderCase(){let c=cases[caseIndex];document.getElementById("scenarioContent").innerHTML=`<b style="color:var(--teal);font-size:12px">${c.title}</b><p>${c.desc}</p><div class="scenario-choices">${c.choices.map((v,i)=>`<button onclick="answerCase(${i})">${String.fromCharCode(65+i)}. ${v}</button>`).join("")}</div><div class="scenario-result" id="caseResult"></div><div style="margin-top:12px"><button class="btn" style="background:#edf2f5;color:#35536a" onclick="nextCase()">สถานการณ์ถัดไป →</button></div>`;}
+function answerCase(i){let c=cases[caseIndex],el=document.getElementById("caseResult");el.style.display="block";el.style.background=i===c.correct?"#eaf7f1":"#fff2e8";el.style.color=i===c.correct?"#17644f":"#8a4c24";el.textContent=(i===c.correct?"เหมาะสม: ":"ควรทบทวน: ")+c.feedback;}
+function nextCase(){caseIndex=(caseIndex+1)%cases.length;renderCase();}
+renderNav();updateProgress();renderLesson();renderCase();
+</script>
+</body></html>
